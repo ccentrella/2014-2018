@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Spelling Master Installation", "Spelling Master Installation\Spelling Master Installation.isproj", "{10E69348-5E15-42DC-897C-E958CCBDC46D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Default = CD_ROM|Default
+		DVD-5|Default = DVD-5|Default
+		SingleImage|Default = SingleImage|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10E69348-5E15-42DC-897C-E958CCBDC46D}.CD_ROM|Default.ActiveCfg = CD_ROM
+		{10E69348-5E15-42DC-897C-E958CCBDC46D}.CD_ROM|Default.Build.0 = CD_ROM
+		{10E69348-5E15-42DC-897C-E958CCBDC46D}.DVD-5|Default.ActiveCfg = DVD-5
+		{10E69348-5E15-42DC-897C-E958CCBDC46D}.DVD-5|Default.Build.0 = DVD-5
+		{10E69348-5E15-42DC-897C-E958CCBDC46D}.SingleImage|Default.ActiveCfg = SingleImage
+		{10E69348-5E15-42DC-897C-E958CCBDC46D}.SingleImage|Default.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

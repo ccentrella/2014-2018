@@ -1,0 +1,25 @@
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\bin\Debug\Exchaneg Multiplication Facts Helper.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\bin\Debug\Exchaneg Multiplication Facts Helper.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\bin\Debug\Exchaneg Multiplication Facts Helper.xml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchaneg_Multiplication_Facts_Helper.Form1.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchaneg_Multiplication_Facts_Helper.Memorizer.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchaneg_Multiplication_Facts_Helper.Resources.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.vbproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchaneg Multiplication Facts Helper.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchaneg Multiplication Facts Helper.xml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchaneg Multiplication Facts Helper\obj\Debug\Exchaneg Multiplication Facts Helper.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.vbproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\bin\Debug\Exchange Multiplication Facts Helper.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\bin\Debug\Exchange Multiplication Facts Helper.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\bin\Debug\Exchange Multiplication Facts Helper.xml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange_Multiplication_Facts_Helper.Exercises.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange_Multiplication_Facts_Helper.Welcome.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange_Multiplication_Facts_Helper.Memorizer.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange_Multiplication_Facts_Helper.Resources.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.xml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\bin\Debug\Exchange Multiplication Facts Helper.exe.manifest
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\bin\Debug\Exchange Multiplication Facts Helper.application
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.exe.manifest
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Exchange Multiplication Facts Helper\obj\Debug\Exchange Multiplication Facts Helper.application

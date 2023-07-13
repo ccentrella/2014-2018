@@ -1,0 +1,21 @@
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Congratulations.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.SplashScreen.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Start.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Resources.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\Auto-Helper Decimals.vbproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\bin\Debug\Auto-Helper Decimals.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\bin\Debug\Auto-Helper Decimals.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\bin\Debug\Auto-Helper Decimals.xml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\Auto-Helper Decimals.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\Auto-Helper Decimals.xml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\Auto-Helper Decimals.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Account.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\bin\Debug\Auto-Helper Decimals.exe.config
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Exercises.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Settings.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.AutoSketch.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\AutoHelper.Help.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\bin\Debug\Auto-Helper Decimals.exe.manifest
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\bin\Debug\Auto-Helper Decimals.application
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\Auto-Helper Decimals.exe.manifest
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Auto-Helper Decimals\obj\Debug\Auto-Helper Decimals.application

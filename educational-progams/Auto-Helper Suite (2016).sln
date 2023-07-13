@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Auto-Helper Fractions", "Auto-Helper Fractions\Auto-Helper Fractions.vbproj", "{BA6D142F-6022-4364-838F-3E616BCD42AB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Auto-Helper Basic Arithmetic", "Auto-Helper Basic Arithmetic\Auto-Helper Basic Arithmetic.vbproj", "{13D8AFE0-D951-4720-B2BE-98FB36A5A179}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Auto-Helper Decimals", "Auto-Helper Decimals\Auto-Helper Decimals.vbproj", "{30447B58-B38D-4181-A3BC-6E655287467C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpellingMaster", "SpellingMaster\SpellingMaster.csproj", "{6A6CB365-CD89-4FAE-A9D6-4F154566B3F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "English Mate™", "English Mate™\English Mate™.csproj", "{938A5EB7-5338-4D83-84EF-2FA80A4CAA60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA6D142F-6022-4364-838F-3E616BCD42AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6D142F-6022-4364-838F-3E616BCD42AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6D142F-6022-4364-838F-3E616BCD42AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6D142F-6022-4364-838F-3E616BCD42AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D8AFE0-D951-4720-B2BE-98FB36A5A179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D8AFE0-D951-4720-B2BE-98FB36A5A179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D8AFE0-D951-4720-B2BE-98FB36A5A179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D8AFE0-D951-4720-B2BE-98FB36A5A179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30447B58-B38D-4181-A3BC-6E655287467C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30447B58-B38D-4181-A3BC-6E655287467C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30447B58-B38D-4181-A3BC-6E655287467C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30447B58-B38D-4181-A3BC-6E655287467C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6CB365-CD89-4FAE-A9D6-4F154566B3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6CB365-CD89-4FAE-A9D6-4F154566B3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6CB365-CD89-4FAE-A9D6-4F154566B3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6CB365-CD89-4FAE-A9D6-4F154566B3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938A5EB7-5338-4D83-84EF-2FA80A4CAA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938A5EB7-5338-4D83-84EF-2FA80A4CAA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938A5EB7-5338-4D83-84EF-2FA80A4CAA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938A5EB7-5338-4D83-84EF-2FA80A4CAA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

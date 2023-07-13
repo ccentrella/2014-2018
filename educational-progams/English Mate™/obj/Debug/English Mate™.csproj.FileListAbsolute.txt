@@ -1,0 +1,19 @@
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\bin\Debug\English Mate™.exe.config
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Properties.Resources.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Settings.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Settings.yo.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\English Mate™.csproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\bin\Debug\English Mate™.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\bin\Debug\English Mate™.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\bin\Debug\yo\English Mate™.resources.dll
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\yo\English Mate™.resources.dll
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\English Mate™.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\English Mate™.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Account.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.CompositionExercises.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Congratulations.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.GrammarExercises.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Help.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.Start.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\EnglishMate.StartExercise.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\English Mate™\obj\Debug\English Mate™.csprojResolveAssemblyReference.cache
