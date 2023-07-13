@@ -1,0 +1,19 @@
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\bin\Debug\Autosoft Clock.exe.config
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\bin\Debug\Autosoft Clock.exe.manifest
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\bin\Debug\Autosoft Clock.application
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\bin\Debug\Autosoft Clock.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\bin\Debug\Autosoft Clock.pdb
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Crystal 2017 Modern.baml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\MainWindow.baml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\App.baml
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\MainWindow.g.cs
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\App.g.cs
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock_MarkupCompile.cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.g.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft_Clock.Properties.Resources.resources
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.csproj.GenerateResource.Cache
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.exe.manifest
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.application
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.exe
+C:\Users\Thomas\Documents\Visual Studio 2013\Projects\Autosoft Clock\obj\Debug\Autosoft Clock.pdb
