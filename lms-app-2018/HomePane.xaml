@@ -1,0 +1,37 @@
+﻿<Page x:Uid="Page_1" x:Class="RecordPro.HomePane"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  mc:Ignorable="d"
+	  d:DesignHeight="50"
+	  d:DesignWidth="200"
+	  Title="HomePane"
+	  Loaded="Page_Loaded">
+
+	<Grid x:Uid="Grid_1">
+		<Grid.RowDefinitions>
+			<RowDefinition x:Uid="RowDefinition_1" />
+			<RowDefinition x:Uid="RowDefinition_2" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition x:Uid="ColumnDefinition_1" />
+			<ColumnDefinition x:Uid="ColumnDefinition_2" Width="25" />
+		</Grid.ColumnDefinitions>
+		<Button x:Uid="homeButton" Content="_Home"
+				Name="homeButton"
+				Margin="1"
+				Click="Home_Click" />
+		<Button x:Uid="Button_1" Content="_Sign Out"
+				Grid.Row="2"
+				Click="SignOut_Click" />
+		<Button x:Uid="settingsButton" Name="settingsButton"
+				Grid.Column="1"
+				Style="{DynamicResource CrystalIconButton}"
+				Click="SettingsButton_Click"
+				ToolTip="Change Settings">
+			<Image x:Uid="Image_1" Source="Settings.png"
+				   RenderOptions.BitmapScalingMode="NearestNeighbor" />
+		</Button>
+	</Grid>
+</Page>

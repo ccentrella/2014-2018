@@ -1,0 +1,79 @@
+﻿<Page x:Uid="Page_1"
+	  x:Class="RecordPro.Welcome"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  mc:Ignorable="d"
+	  d:DesignHeight="300"
+	  d:DesignWidth="500"
+	  Title="Welcome"
+	  WindowTitle="Welcome - Record Pro">
+	<Grid x:Uid="Grid_1">
+		<Grid.RowDefinitions>
+			<RowDefinition x:Uid="RowDefinition_1"
+						   Height="Auto" />
+			<RowDefinition x:Uid="RowDefinition_2" />
+			<RowDefinition x:Uid="RowDefinition_3"
+						   Height="Auto" />
+		</Grid.RowDefinitions>
+		<Label x:Uid="Label_1"
+			   Style="{DynamicResource CrystalHeadings2Dark}"
+			   Content="Welcome to Record Pro 2018!"
+			   HorizontalAlignment="Center" />
+		<FlowDocumentScrollViewer x:Uid="FlowDocumentScrollViewer_1"
+								  ScrollViewer.VerticalScrollBarVisibility="Auto"
+								  HorizontalContentAlignment="Center"
+								  Grid.Row="1">
+			<FlowDocument x:Uid="FlowDocument_1">
+				<List MarkerStyle="Box">
+					<ListItem>
+						<Paragraph x:Uid="Paragraph_1"
+								   Style="{DynamicResource FlowDataStyle}">
+							Student profiles keep
+							<Italic>all</Italic> information for
+							<Italic>every</Italic> student accessible from
+							<Italic>one</Italic> place.
+						</Paragraph>
+					</ListItem>
+					<ListItem>
+						<Paragraph Style="{DynamicResource FlowDataStyle}">
+							Built-in organization automatically generates a report card for each student.
+						</Paragraph>
+					</ListItem>
+					<ListItem>
+						<Paragraph Style="{DynamicResource FlowDataStyle}">
+							Students have tools like calculator and clock easily accessible to them.
+						</Paragraph>
+					</ListItem>
+					<ListItem>
+						<Paragraph Style="{DynamicResource FlowDataStyle}">Students' records can be easily updated.</Paragraph>
+					</ListItem>
+					<ListItem>
+						<Paragraph Style="{DynamicResource FlowDataStyle}">Visual progress motivates students.</Paragraph>
+					</ListItem>
+					<ListItem>
+						<Paragraph Style="{DynamicResource FlowDataStyle}">Class View enables teachers to easily view and analyze students.</Paragraph>
+					</ListItem>
+					<ListItem>
+						<Paragraph Style="{DynamicResource FlowDataStyle}">Record Pro features a modern interface with many themes to choose from.</Paragraph>
+					</ListItem>
+				</List>
+
+				<BlockUIContainer>
+					<Label Background="DarkBlue"
+						   FontFamily="Segoe UI, Calibri"
+						   Foreground="White"
+						   HorizontalAlignment="Stretch"
+						   HorizontalContentAlignment="Center">Just $2.50 per account</Label>
+				</BlockUIContainer>
+			</FlowDocument>
+		</FlowDocumentScrollViewer>
+		<Button x:Uid="Button_1"
+				Grid.Row="2"
+				Content="_Create Account"
+				HorizontalAlignment="Center"
+				Padding="25,5"
+				Click="Button_Click" />
+	</Grid>
+</Page>

@@ -1,0 +1,97 @@
+﻿<Page x:Uid="Page_1"
+      x:Class="RecordPro.ManageGrades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RecordPro"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="500"
+      WindowTitle="Manage Grades - Record Pro"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <DataTemplate x:Key="usersTemplate">
+            <TextBlock Text="{Binding UserName}"
+                       ToolTip="{StaticResource StudentPopup}" />
+        </DataTemplate>
+        <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+        <DataTemplate x:Key="gradesTemplate">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+    </Page.Resources>
+    <Grid x:Uid="Grid_1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Uid="ColumnDefinition_1"
+                              Width="Auto" />
+            <ColumnDefinition x:Uid="ColumnDefinition_2" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" />
+            <RowDefinition x:Uid="RowDefinition_2" />
+        </Grid.RowDefinitions>
+        <GroupBox x:Uid="GroupBox_1"
+                  Header="Manage your grades">
+            <ListBox x:Uid="grades"
+                     Name="grades"
+                     ItemTemplate="{StaticResource gradesTemplate}"
+                     SelectionChanged="grades_SelectionChanged"
+                     KeyDown="grades_KeyDown" />
+        </GroupBox>
+        <StackPanel x:Uid="StackPanel_1"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Grid.RowSpan="2"
+                    Margin="0,35,5,0">
+            <ComboBox x:Uid="UserComboBox"
+                      Name="UserComboBox"
+                      ItemsSource="{Binding}"
+                      SelectedValuePath="UserName"
+                      ToolTip="The student to modify"
+                      ItemTemplate="{StaticResource usersTemplate}"
+                      Visibility="Collapsed"
+                      SelectionChanged="UserComboBox_SelectionChanged" />
+            <Button x:Uid="Button_1"
+                    Content="_Add a grade"
+                    Click="NewGrade_Click" />
+            <StackPanel MaxHeight="0"
+                        x:Uid="gradeOptions"
+                        Name="gradeOptions"
+                        Height="Auto">
+                <Button x:Uid="Button_3"
+                        Content="_Rename Grade"
+                        Click="RenameGradeButton_Click" />
+                <Button x:Uid="Button_4"
+                        Content="_Delete Grade"
+                        Click="DeleteButton_Click" />
+                <Button x:Uid="Button_2"
+                        Content="_Add a course"
+                        Click="NewCourseButton_Click"
+                        Visibility="{Binding ItemsSource, 
+					ElementName=courses,Converter={StaticResource NullToVisibilityConverter}}" />
+            </StackPanel>
+            <StackPanel x:Uid="courseOptions"
+                        Name="courseOptions"
+                        Height="Auto"
+                        MaxHeight="0">
+                <Button x:Uid="Button_5"
+                        Content="_Rename Course"
+                        Click="RenameCourse_Click" />
+                <Button x:Uid="Button_6"
+                        Content="_Delete Course"
+                        Click="DeleteCourse_Click" />
+            </StackPanel>
+        </StackPanel>
+        <GroupBox x:Uid="GroupBox_3"
+                  Header="Manage your courses"
+                  Grid.Row="1"
+                  Name="coursesGroupBox"
+                  Visibility="{Binding ItemsSource, 
+			ElementName=courses,Converter={StaticResource NullToVisibilityConverter}}">
+            <ListBox x:Uid="courses"
+                     Name="courses"
+                     SelectionChanged="courses_SelectionChanged"
+                     KeyDown="courses_KeyDown" />
+        </GroupBox>
+    </Grid>
+</Page>

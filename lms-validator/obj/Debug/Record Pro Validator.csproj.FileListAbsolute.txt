@@ -1,0 +1,13 @@
+C:\Users\usa4c\source\repos\Record Pro Validator\bin\Debug\Record Pro Validator.exe.config
+C:\Users\usa4c\source\repos\Record Pro Validator\bin\Debug\Record Pro Validator.exe
+C:\Users\usa4c\source\repos\Record Pro Validator\bin\Debug\Record Pro Validator.pdb
+C:\Users\usa4c\source\repos\Record Pro Validator\obj\Debug\Record Pro Validator.csprojAssemblyReference.cache
+C:\Users\usa4c\source\repos\Record Pro Validator\obj\Debug\Record Pro Validator.exe
+C:\Users\usa4c\source\repos\Record Pro Validator\obj\Debug\Record Pro Validator.pdb
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\obj\Debug\Record Pro Validator.csprojAssemblyReference.cache
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\obj\Debug\Record Pro Validator.csproj.CoreCompileInputs.cache
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\obj\Debug\Record Pro Validator.exe
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\bin\Debug\Record Pro Validator.exe.config
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\bin\Debug\Record Pro Validator.exe
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\bin\Debug\Record Pro Validator.pdb
+C:\Users\usa4c\OneDrive - Franciscan University of Steubenville\Documents\Programming\Record Pro Validator\obj\Debug\Record Pro Validator.pdb

@@ -1,0 +1,238 @@
+﻿<Window x:Uid="mainWindow"
+		x:Class="RecordPro.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:RecordPro"
+        Title="Record Pro"
+		Name="mainWindow"
+		Height="400"
+		Width="800" 
+		MinWidth="200"
+		Icon="Record Pro Logo.png"
+		Loaded="Window_Loaded" >
+    <Window.Resources>
+        <local:GradeToBackgroundConverter x:Key="GradeToBackgroundConverter"/>
+        <local:NullToGridLengthConverter x:Key="NullToGridLengthConverter"/>
+        <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+        <local:OverlayConverter x:Key="overlayConverter" />
+        <local:TimeToStringConverter x:Key="TimeConverter"/>
+        <local:DateTimeCollectionToStringConverter x:Key="DateTimeConverter"/>
+        <DataTemplate x:Key="search">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition  Width="{Binding Time, Converter={StaticResource NullToGridLengthConverter}}" />
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{DynamicResource CrystalHeadings2T}" Text="{Binding Course}"/>
+                <TextBlock x:Uid="TextBlock_2" 
+						   Grid.Column="2" 
+						   Style="{StaticResource TimeStyle}"
+						   ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}"
+						   Visibility="{Binding Time, Converter={StaticResource NullToVisibilityConverter}}">
+                    <TextBlock.Text>
+                        <PriorityBinding>
+                            <Binding Path="Time"
+									 Converter="{StaticResource TimeConverter}"
+									 IsAsync="True" />
+                            <Binding Path="Time" />
+                        </PriorityBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock Grid.Column="1"  VerticalAlignment="Center" Text="{Binding Date, Converter={StaticResource DateTimeConverter}}" HorizontalAlignment="Center"/>
+                <Label x:Uid="Label_3"
+					   Grid.Column="3"
+					   VerticalAlignment="Center"
+					   Content="{Binding Grade}"
+					   Foreground="{DynamicResource CrystalForeground}"
+					   Background="{Binding Grade, Converter={StaticResource GradeToBackgroundConverter}}"
+					   Style="{DynamicResource GradeStyle}"
+					   Visibility="{Binding Grade, Converter={StaticResource NullToVisibilityConverter}}" />
+                <Expander Header="Additional Information"  Grid.Row="1" Grid.ColumnSpan="4" Foreground="{DynamicResource CrystalDarkForeground2}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding AssignmentType, StringFormat=Assignment Type: {0}}"/>
+                        <TextBlock Text="{Binding GradeLevel, StringFormat=Grade Level: {0}}" Grid.Row="1"/>
+                        <TextBlock Text="{Binding AssistanceNeeded, StringFormat=Asssistance Needed: {0}}" Grid.Row="2"/>
+                        <TextBlock Text="{Binding Details}" ToolTip="{Binding Notes}" Grid.Row="3" Style="{DynamicResource DataStyle}"/>
+                    </Grid>
+                </Expander>
+                <Grid.ToolTip>
+                    <TextBlock Text="{Binding Details}" Style="{DynamicResource DataStyle}"/>
+                </Grid.ToolTip>
+
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Uid="WindowProgress"
+						 x:Name="WindowProgress"
+						 ProgressValue="{Binding Value, ElementName=progress}"/>
+    </Window.TaskbarItemInfo>
+    <Grid x:Uid="Grid_1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition x:Uid="RowDefinition_4" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Frame x:Uid="MainFrame"
+			   Grid.ColumnSpan="3"
+			   x:Name="MainFrame"
+			   Background="{DynamicResource CrystalWindowFill}"
+			   JournalOwnership="UsesParentJournal"
+			   Grid.Row="2" 
+               Source="Welcome.xaml"
+			   NavigationUIVisibility="Hidden"
+			   Navigated="MainFrame_Navigated" />
+        <Button x:Uid="AvatarButton"
+				Grid.Column="2" Grid.Row="2" VerticalAlignment="Top"
+				x:Name="AvatarButton"
+				Style="{DynamicResource CrystalIconButton}"
+				WindowChrome.IsHitTestVisibleInChrome="True"
+				Margin="2,2,2,2"
+				ToolTip="{StaticResource StudentPopup}"
+				Padding="0" Panel.ZIndex="1"
+				Click="Button_Click"
+				Height="22"
+				Width="22">
+            <Image x:Uid="Avatar"
+				   x:Name="Avatar"
+				   Width="20"
+				   Height="20"
+				   Source="Generic Avatar (Unisex).png">
+                <Image.CacheMode>
+                    <BitmapCache x:Uid="BitmapCache_1"
+								 SnapsToDevicePixels="False"
+								 RenderAtScale="2" />
+                </Image.CacheMode>
+                <Image.Clip>
+                    <EllipseGeometry x:Uid="EllipseGeometry_1"
+									 RadiusX="10"
+									 Center="10,10"
+									 RadiusY="10" />
+                </Image.Clip>
+            </Image>
+        </Button>
+        <Popup x:Uid="AvatarPopup"
+			   x:Name="AvatarPopup"
+			   Height="Auto"
+			   MinWidth="200"
+			   Width="Auto"
+			   PlacementTarget="{Binding ElementName=AvatarButton}"
+			   Opened="AvatarPopup_Opened"
+			   Closed="AvatarPopup_Closed">
+            <Grid x:Uid="Grid_2">
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Uid="RowDefinition_5"
+								   Height="Auto" />
+                    <RowDefinition x:Uid="RowDefinition_6" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Uid="ColumnDefinition_1" />
+                    <ColumnDefinition x:Uid="ColumnDefinition_2"
+									  Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Border x:Uid="Border_2"
+						Grid.RowSpan="3"
+						Grid.ColumnSpan="2"
+						BorderThickness="1"
+						Background="{DynamicResource PopupBackground}"
+						BorderBrush="{DynamicResource CrystalBorder}" />
+                <Label x:Uid="UserHeader"
+					   x:Name="UserHeader"
+					   Style="{DynamicResource CrystalHeadings2}"
+					   Content="Sign In" />
+                <Image x:Uid="Image_1"
+					   Source="{Binding Source, ElementName=Avatar}"
+					   Height="28"
+					   Margin="4,0"
+					   Width="28"
+					   Grid.Column="1"
+					   HorizontalAlignment="Right">
+                    <Image.CacheMode>
+                        <BitmapCache x:Uid="BitmapCache_2"
+									 SnapsToDevicePixels="False"
+									 RenderAtScale="2" />
+                    </Image.CacheMode>
+                    <Image.Clip>
+                        <EllipseGeometry x:Uid="EllipseGeometry_2"
+										 Center="14,14"
+										 RadiusX="14"
+										 RadiusY="14" />
+                    </Image.Clip>
+                </Image>
+                <Frame x:Uid="SmallPane"
+					   Grid.Row="1"
+					   Grid.ColumnSpan="2"
+					   x:Name="SmallPane"
+					   Height="Auto"
+					   Source="SignIn1.xaml"
+					   NavigationUIVisibility="Hidden"
+					   JournalOwnership="UsesParentJournal"/>
+            </Grid>
+        </Popup>
+        <ProgressBar x:Uid="Progress"
+					 Grid.ColumnSpan="2"
+					 x:Name="progress"
+					 Style="{DynamicResource MainProgress}"
+					 Margin="0,2"
+					 Maximum="1"
+					 HorizontalAlignment="Stretch"
+					 Visibility="Hidden" />
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" Visibility="Collapsed" x:Name="searchPane">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.ColumnSpan="2" x:Name="searchBox" TextChanged="searchBox_TextChanged"  KeyDown="searchBox_KeyDown"/>
+            <Image Grid.Column="1" Source="search.png" Margin="3"/>
+        </Grid>
+        <Grid  Grid.ColumnSpan="3" Grid.Row="2" Visibility="{Binding ElementName=searchBox, Path=Text, Converter={StaticResource NullToVisibilityConverter}}" 
+               x:Name="resultsPane" Background="White" Panel.ZIndex="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Margin="5,0" ToolTip="Back" Style="{DynamicResource CrystalDrawingButton}" Click="Button_Click_1">
+                <Path Data="M11.437023,0L12.910027,1.3519993 3.6363177,11.457997 32.000037,11.457997 32.000037,13.457997
+                      3.6290457,13.457997 12.796026,23.446989 11.322024,24.798988 0,12.461994z"
+                      Stretch="Uniform"  Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"
+                      Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+            </Button>
+            <Label Name="resultsText"  Grid.Column="1" Content="Results" HorizontalAlignment="Right" Margin="0,0,25,0" Style="{DynamicResource CrystalHeadings2Dark}"/>
+            <ListBox  Grid.Row="1" x:Name="resultsBox" Grid.ColumnSpan="2" ItemTemplate="{StaticResource search}" HorizontalContentAlignment="Stretch" 
+                      MouseLeftButtonUp="resultsBox_MouseLeftButtonUp">
+                <ListBox.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}" Style="{DynamicResource CrystalHeadingsDark}"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </ListBox.GroupStyle>
+            </ListBox>
+        </Grid>
+    </Grid>
+
+
+</Window>

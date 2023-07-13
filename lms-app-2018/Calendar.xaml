@@ -1,0 +1,376 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:local="clr-namespace:RecordPro"
+	  xmlns:sys="clr-namespace:System;assembly=mscorlib"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  mc:Ignorable="d"
+	  x:Uid="Page_1"
+	  x:Class="RecordPro.Calendar"
+	  Title="View Assignments"
+	  Initialized="Page_Initialized"
+	  Loaded="Page_Loaded" d:DesignWidth="483.696" d:DesignHeight="227.359">
+	<Page.Resources>
+		<local:UserToolTipConverter x:Uid="local:UserToolTipConverter_1"
+									x:Key="UserToolTipConverter" />
+		<local:UserImageConverter x:Key="UserImageConverter" />
+		<local:GradeToBackgroundConverter	x:Uid="local:GradeConverter_1"
+											x:Key="GradeToBackgroundConverter" />
+		<local:GradeToImageConverter x:Key="GradeToImageConverter" />
+		<local:GradeToToolTipConverter x:Key="GradeToToolTipConverter" />
+		<local:TimeToStringConverter x:Key="TimeConverter" />
+		<local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+		<local:TextToVisibilityConverter x:Key="TextToVisibilityConverter" />
+		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+		<local:NullToGridLengthConverter x:Key="NullToGridLengthConverter" />
+		<local:QuickFactsToVisibilityConverter x:Key="QuickFactsToVisibilityConverter" />
+		<local:AssignmentTypeToImageConverter x:Key="AssignmentTypeToImageConverter" />
+		<local:DateToStringConverter x:Key="DateToStringConverter" />
+		<local:DateToImageConverter x:Key="DateToImageConverter" />
+		<ContextMenu x:Uid="ContextMenu_1"
+					 x:Key="assignmentContextMenu">
+			<MenuItem x:Uid="MenuItem_2"
+					  Command="Delete"
+					  CommandParameter="{Binding}" />
+			<MenuItem x:Uid="MenuItem_3"
+					  Command="{x:Static local:Commands.ModifyAssignment}"
+					  CommandParameter="{Binding}" />
+		</ContextMenu>
+		<HierarchicalDataTemplate   DataType="{x:Type local:User}"
+									ItemsSource="{Binding Assignments}">
+			<Grid x:Uid="Grid_1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition x:Uid="ColumnDefinition_1" />
+					<ColumnDefinition x:Uid="ColumnDefinition_2"
+									  Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Uid="TextBlock_1"
+						   Text="{Binding UserName}"
+						   Style="{DynamicResource UserLabels}"
+						   ToolTip="{StaticResource StudentPopup}" />
+				<Image Width="15"
+					   HorizontalAlignment="Right"
+					   Grid.Column="1"
+					   Height="15"
+					   ToolTip="{Binding Assignments.Count, Converter={StaticResource UserToolTipConverter}}">
+					<Image.CacheMode>
+						<BitmapCache x:Uid="BitmapCache_1"
+									 SnapsToDevicePixels="False"
+									 RenderAtScale="2" />
+					</Image.CacheMode>
+					<Image.Clip>
+						<EllipseGeometry x:Uid="EllipseGeometry_1"
+										 RadiusX="7.5"
+										 Center="7.5,7.5"
+										 RadiusY="7.5" />
+					</Image.Clip>
+					<Image.Source>
+						<PriorityBinding>
+							<Binding Converter="{StaticResource UserImageConverter}"
+									 IsAsync="True" />
+							<Binding Source="Generic Avatar (Unisex).png" />
+						</PriorityBinding>
+					</Image.Source>
+				</Image>
+			</Grid>
+		</HierarchicalDataTemplate>
+		<DataTemplate DataType="{x:Type local:Assignment}">
+			<Grid x:Uid="Grid_2"
+				  ContextMenu="{StaticResource assignmentContextMenu}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition x:Uid="ColumnDefinition_4"
+									  Width="2*" />
+					<ColumnDefinition  Width="{Binding Time, Converter={StaticResource NullToGridLengthConverter}}" />
+					<ColumnDefinition x:Uid="ColumnDefinition_5"
+									  Width="Auto" />
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Uid="Label_2"
+						   ToolTip="{Binding Details}"
+						   Text="{Binding Course}"
+						   Style="{DynamicResource CourseStyle}" />
+				<TextBlock x:Uid="TextBlock_2"
+						   Grid.Column="1"
+						   Style="{StaticResource TimeStyle}"
+						   ToolTip="{Binding Text, RelativeSource={RelativeSource Self}}"
+						   Visibility="{Binding Time, Converter={StaticResource NullToVisibilityConverter}}">
+					<TextBlock.Text>
+						<PriorityBinding>
+							<Binding Path="Time"
+									 Converter="{StaticResource TimeConverter}"
+									 IsAsync="True" />
+							<Binding Path="Time" />
+						</PriorityBinding>
+					</TextBlock.Text>
+				</TextBlock>
+				<Label x:Uid="Label_3"
+					   Grid.Column="2"
+					   VerticalAlignment="Center"
+					   Content="{Binding Grade}"
+					   Foreground="{DynamicResource CrystalForeground}"
+					   Background="{Binding Grade, Converter={StaticResource GradeToBackgroundConverter}}"
+					   Style="{DynamicResource GradeStyle}"
+					   Visibility="{Binding Grade, Converter={StaticResource NullToVisibilityConverter}}" />
+			</Grid>
+		</DataTemplate>
+	</Page.Resources>
+	<Page.CommandBindings>
+		<CommandBinding x:Uid="CommandBinding_1"
+						Command="Copy"
+						CanExecute="AssignmentCommand_CanExecute"
+						Executed="Copy_Executed" />
+		<CommandBinding x:Uid="CommandBinding_2"
+						Command="Delete"
+						CanExecute="AssignmentCommand_CanExecute"
+						Executed="Delete_Executed" />
+		<CommandBinding x:Uid="CommandBinding_2"
+						Command="{x:Static local:Commands.ModifyAssignment}"
+						CanExecute="AssignmentCommand_CanExecute"
+						Executed="ModifyAssignment_Executed" />
+		<CommandBinding Command="{x:Static local:Commands.ToggleDetails}"
+						CanExecute="AssignmentCommand_CanExecute"
+						Executed="toggleDetails_Executed" />
+		<CommandBinding Command="{x:Static local:Commands.ShowToday}"
+						CanExecute="ShowCalendar_CanExecute"
+						Executed="ShowCalendar_Executed" />
+	</Page.CommandBindings>
+	<Grid x:Uid="Grid_4">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<ToolBar Style="{DynamicResource CrystalToolBar}"
+				 ToolBarTray.IsLocked="True"
+				 RenderOptions.BitmapScalingMode="NearestNeighbor">
+			<Button Command="{x:Static local:Commands.ShowToday}"
+					ToolTip="Show Today"
+					Style="{DynamicResource CrystalDrawingButton}">
+				<Path Data="M25.988008,12.728011L32.001007,19.130013 30.543007,        20.499012 27,16.727323 27,27 25,27 25,16.701666 21.424009,        20.508013 19.966011,19.139013z M2,4.0000075L2,8 23,8 23,        4.0000075 19,4.0000075 19,6 17,6 17,4.0000075 8,4.0000075 8,        6 6,6 6,4.0000075z M6,0L8,0 8,2.0000075 17,2.0000075 17,0 19,        0 19,2.0000075 25,2.0000075 25,12.000008 23,12.000008 23,10 2,        10 2,25.000008 20,25.000008 20,27.000008 0,27.000008 0,2.0000075 6,2.0000075z"
+					  Stretch="Uniform"
+					  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+			</Button>
+			<Button Command="Copy"
+					Style="{DynamicResource CrystalDrawingButton}"
+					ToolTip="Copy Details">
+				<Path Stretch="Uniform"
+					  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"
+					  Data="M15.750034,11.464005L15.750034,11.563995 15.750034,        15.651001C15.750034,15.651001,15.651035,18.343002,12.660001,        18.14299L9.1709793,18.14299 9.1709793,24.722992 9.1709793,        27.015991 9.1709793,29.606995C9.1709793,29.906982,9.370015,        30.105988,9.6689661,30.105988L22.828052,30.105988C23.127003,        30.105988,23.327015,29.906982,23.327015,29.606995L23.327015,        11.962997C23.327015,11.664001,23.127003,11.464005,22.828052,        11.464005z M10.267966,2.2929993L10.267966,7.2769928C10.267966,        7.2769928,10.167991,10.567001,6.5789936,10.26799L2.2929741,        10.26799 2.2929741,24.125C2.2929738,24.424011,2.5919858,24.722992,        2.8909975,24.722992L7.3769692,24.722992 7.3769692,17.645004 9.0710037,        15.849991 13.258024,11.464005 14.953035,9.6699982 19.339031,        9.6699982 19.339031,2.8909912C19.339031,2.5919952,19.04002,2.2929993,        18.741007,2.2929993z M9.1709793,0L18.741007,0C20.336042,0,21.632006,        1.29599,21.632006,2.8909912L21.632006,9.6699982 22.828052,        9.6699982C24.124014,9.6699982,25.221002,10.765991,25.221002,        12.061996L25.221002,29.606995C25.221002,30.902985,24.124014,        32,22.828052,32L9.6689661,32C8.3739803,32,7.2769931,30.902985,        7.2769931,29.606995L7.2769931,27.015991 2.8909975,27.015991C1.2959624,        27.015991,1.7277489E-07,25.720001,0,24.125L0,9.6699982 2.0929614,7.4769897 7.0780185,2.1929932z" />
+			</Button>
+			<Button Command="{x:Static local:Commands.ModifyAssignment}"
+					Style="{DynamicResource CrystalDrawingButton}"
+					ToolTip="Modify Assignment">
+				<Path Data="M12.800156,28.100001L14.300174,29.300001 15.800192,        30.500001 14.000171,31.300001 12.200149,32.000001 12.500153,        30.100001z M20.600251,17.000001L24.800302,20.400001 17.800217,        29.000001 13.600166,25.600001z M24.500299,13.800001C25.100306,        13.800001 25.700313,14.000001 26.200319,14.400001 27.400333,        15.300001 27.500335,17.000001 26.600324,18.200001L25.700313,        19.300001 21.500262,15.900001 22.400273,14.800001C22.900279,        14.200001,23.700289,13.900001,24.500299,13.800001z M8.9001083,        0L19.200234,0C21.300259,0,23.00028,1.7000008,23.00028,3.7000008L23.00028,        3.8000011 23.00028,4.2000008 23.00028,9.8000011 21.100257,        9.8000011 21.100257,3.7000008C21.000256,2.7000008,20.200246,1.9000015,        19.200234,1.9000015L9.6001167,1.9000015 9.6001167,7.500001C9.6001167,        8.7000008,8.6001053,9.6000004,7.5000916,9.6000004L1.9000244,        9.6000004 1.9000244,25.000001C1.9000244,26.100001,2.8000345,        26.900001,3.8000469,26.900001L11.200137,26.900001 10.900133,        28.800001 3.8000469,28.800001C1.7000217,28.800001,0,27.100001,        0,25.000001L0,9.000001 0,8.9000006 0,8.8000011C0,8.7000008 0,        8.7000008 0.10000229,8.7000008 0.10000229,8.6000004 0.20000267,        8.6000004 0.20000267,8.500001L0.30000496,8.4000006C0.40000534,        8.3000011,0.40000534,8.3000011,0.50000572,8.2000008L8.1000986,        0.60000038 8.2000999,0.5 8.3001013,0.40000153C8.4001026,0.30000114,        8.4001026,0.30000114,8.500104,0.30000114L8.6001053,0.30000114C8.7001066,        0.30000114 8.7001066,0.30000114 8.7001066,0.20000076 8.800107,0 8.800107,0 8.9001083,0z"
+					  Stretch="Uniform"
+					  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+			</Button>
+			<Button Command="Delete"
+					Style="{DynamicResource CrystalDrawingButton}"
+					ToolTip="Delete Assignment">
+				<Path Stretch="Uniform"
+					  Data="M18.113995,14.395003L20.570995,16.853013 16.723002,        20.702016 20.570995,24.551019 18.113995,27.009029 14.264993,        23.159995 10.415991,27.009029 7.9579821,24.551019 11.806983        20.702016 7.9579821,16.853013 10.415991,14.39601 14.264993,        18.244005z M11.078986,2.6949793L10.89701,8.5799946C10.89701,        8.5799946,10.661994,12.474987,6.3729897,12.004986L2.6979995,        11.905011 2.6979995,28.624997C2.6979998,28.994993,3.0009783,        29.299985,3.3729878,29.299985L22.264998,29.299985C22.636,        29.299985,22.940016,28.994993,22.940016,28.624997L22.940016,        3.3699981C22.940016,3.000003,22.636,2.6949793,22.264998,        2.6949793z M10.901984,0L22.264998,0C24.129013,0,25.639999,        1.5099807,25.639999,3.3699981L25.639999,28.624997C25.639999,        30.48999,24.129013,32.000001,22.264998,32.000001L3.3729878,        32.000001C1.5099801,32.000001,3.9677161E-08,30.48999,0,        28.624997L0,11.500011 1.3359995,10.090006 1.3370066,10.049998 8.337987,        2.6949793 8.3190051,2.6949793 6.4469948,4.6699876 8.4079943,        2.5950037 8.4360095,2.5950037 8.4979907,2.5300013 8.5040026,2.5300013z"
+					  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" />
+			</Button>
+			<ToggleButton Name="toggleDetails"
+						  Command="{x:Static local:Commands.ToggleDetails}"
+						  Style="{DynamicResource CrystalDrawingButton}"
+						  ToolTip="Toggle Details">
+				<Path Stretch="Uniform"
+					  Stroke="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ToggleButton}}}"
+					  Data="M14.000004,24L29.999,24C31.099006,24,31.999001,24.901001,31.999001,25.999023L31.999001,30C31.999001,31.100037,31.099006,32,29.999,32L14.000004,32C12.899997,32,12.000003,31.100037,12.000003,30L12.000003,25.999023C12.000003,24.901001,12.899997,24,14.000004,24z M2.0000004,24L6.0000014,24C7.0990009,24,8.0000018,24.901001,8.0000018,25.999023L8.0000018,30C8.0000018,31.100037,7.0990009,32,6.0000014,32L2.0000004,32C0.90000182,32,5.9604645E-08,31.100037,0,30L0,25.999023C5.9604645E-08,24.901001,0.90000182,24,2.0000004,24z M14.000004,12L29.999,12C31.099006,12,31.999001,12.901001,31.999001,14L31.999001,18C31.999001,19.100037,31.099006,20,29.999,20L14.000004,20C12.899997,20,12.000003,19.100037,12.000003,18L12.000003,14C12.000003,12.901001,12.899997,12,14.000004,12z M2.0000004,12L6.0000014,12C7.0990009,12,8.0000018,12.901001,8.0000018,14L8.0000018,18C8.0000018,19.100037,7.0990009,20,6.0000014,20L2.0000004,20C0.90000182,20,5.9604645E-08,19.100037,0,18L0,14C5.9604645E-08,12.901001,0.90000182,12,2.0000004,12z M14.000004,0L29.999,0C31.099006,0,31.999001,0.90100098,31.999001,2L31.999001,6C31.999001,7.098999,31.099006,8,29.999,8L14.000004,8C12.899997,8,12.000003,7.098999,12.000003,6L12.000003,2C12.000003,0.90100098,12.899997,0,14.000004,0z M2.0000004,0L6.0000014,0C7.0990009,0,8.0000018,0.90100098,8.0000018,2L8.0000018,6C8.0000018,7.098999,7.0990009,8,6.0000014,8L2.0000004,8C0.90000182,8,5.9604645E-08,7.098999,0,6L0,2C5.9604645E-08,0.90100098,0.90000182,0,2.0000004,0z" />
+			</ToggleButton>
+		</ToolBar>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition x:Uid="ColumnDefinition_8"
+								  x:Name="treeViewDefinition" />
+				<ColumnDefinition x:Uid="ColumnDefinition_7"
+								  Width="Auto" />
+				<ColumnDefinition x:Uid="ColumnDefinition_6"
+								  Width="2*"
+								  x:Name="calendarDefinition" />
+				<ColumnDefinition x:Uid="ColumnDefinition_7"
+								  Width="Auto" />
+				<ColumnDefinition x:Name="detailsDefinition" />
+			</Grid.ColumnDefinitions>
+			<Viewbox x:Uid="calendarViewbox"
+					 Margin="15,0"
+					 Stretch="Uniform"
+					 Grid.Column="2"
+					 x:Name="calendarViewbox">
+				<Calendar x:Uid="calendar"
+						  x:Name="calendar"
+						  IsTodayHighlighted="True"
+						  Style="{DynamicResource CalendarStyle}"
+						  SelectedDatesChanged="calendar_SelectedDatesChanged" />
+			</Viewbox>
+			<GridSplitter x:Uid="GridSplitter_1"
+						  x:Name="recordPaneSplitter"
+						  Grid.Column="1"
+						  Width="2"
+						  Background="{DynamicResource CrystalBorder}"
+						  ResizeBehavior="PreviousAndNext"
+						  DragCompleted="recordPaneSplitter_DragCompleted" />
+			<Grid x:Uid="assignmentPopup"
+				  x:Name="assignmentPopup"
+				  Background="{DynamicResource CrystalBackgroundFill}"
+				  MinWidth="100">
+				<Grid.RowDefinitions>
+					<RowDefinition x:Uid="RowDefinition_6"
+								   Height="Auto" />
+					<RowDefinition x:Uid="RowDefinition_7"
+								   Height="Auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Label x:Uid="Label_6"
+					   Style="{DynamicResource CrystalHeadings2}"
+					   HorizontalAlignment="Center"
+					   Content="{Binding SelectedDate.Date, ElementName=calendar}"
+					   ContentStringFormat="{}{0:D}" />
+				<Image Name="dayImage"
+					   Width="64"
+					   Grid.Row="1"
+					   ToolTip="{Binding SelectedDate, ElementName=calendar, Converter={StaticResource DateToStringConverter}}"
+					   Source="{Binding SelectedDate, ElementName=calendar, IsAsync=True, Converter={StaticResource DateToImageConverter}}" />
+				<ScrollViewer x:Uid="ScrollViewer_1"
+							  HorizontalScrollBarVisibility="Disabled"
+							  Grid.Row="2">
+					<TreeView 	 VirtualizingPanel.IsVirtualizing="True"
+								 x:Name="recordPane"
+								 ItemsSource="{Binding}"
+								 SelectedItemChanged="recordPane_SelectedItemChanged" />
+				</ScrollViewer>
+			</Grid>
+			<GridSplitter ResizeBehavior="PreviousAndNext"
+						  Visibility="{Binding IsChecked, ElementName=toggleDetails, 
+						  Converter={StaticResource BooleanToVisibilityConverter}}"
+						  Grid.Column="3"
+						  x:Name="detailsSplitter"
+						  Background="{DynamicResource CrystalBorder}"
+						  Width="2"
+						  DragCompleted="detailsSplitter_DragCompleted" />
+			<Grid Grid.Column="4"
+				  x:Name="detailsPane"
+				  Visibility="{Binding IsChecked, ElementName=toggleDetails, 
+				  Converter={StaticResource BooleanToVisibilityConverter}}"
+				  Background="{DynamicResource CrystalBackgroundFill}">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="32" />
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="32" />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Label Grid.RowSpan="3"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Center"
+					   Grid.ColumnSpan="2"
+					   Content="Select an assignment to view details."
+					   Visibility="{Binding Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse}" />
+				<Label Style="{DynamicResource CrystalHeadings2}"
+					   Grid.Column="1"
+					   VerticalAlignment="Top"
+					   Name="userLabel"
+					   Content="{Binding  UserName}"
+					   ToolTip="{DynamicResource StudentPopup}"
+					   HorizontalAlignment="Left" />
+				<Image Margin="2"
+					   Name="userImage"
+					   ToolTip="{DynamicResource StudentPopup}">
+					<Image.CacheMode>
+						<BitmapCache x:Uid="BitmapCache_1"
+									 SnapsToDevicePixels="False"
+									 RenderAtScale="2" />
+					</Image.CacheMode>
+					<Image.Clip>
+						<EllipseGeometry x:Uid="EllipseGeometry_1"
+										 RadiusX="14"
+										 Center="14,14"
+										 RadiusY="14" />
+					</Image.Clip>
+					<Image.Source>
+						<PriorityBinding>
+							<Binding    Converter="{StaticResource UserImageConverter}"
+										IsAsync="True" />
+							<Binding Source="Generic Avatar (Unisex).png" />
+						</PriorityBinding>
+					</Image.Source>
+				</Image>
+				<Label Content="{Binding Course}"
+					   Style="{DynamicResource CrystalHeadings}"
+					   HorizontalAlignment="Center"
+					   Grid.Row="1"
+					   Grid.ColumnSpan="2" />
+				<ScrollViewer Grid.Row="2"
+							  Grid.ColumnSpan="2"
+							  HorizontalScrollBarVisibility="Disabled"
+							  Visibility="{Binding  Converter={StaticResource NullToVisibilityConverter}}">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Expander Header="Quick Facts"
+								  Visibility="{Binding Converter={StaticResource QuickFactsToVisibilityConverter}}"
+								  IsExpanded="True">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
+									<RowDefinition />
+								</Grid.RowDefinitions>
+								<TextBlock Text="{Binding Time, Converter={StaticResource TimeConverter}}"
+										   Style="{DynamicResource TimeStyle}"
+										   Margin="0,5,0,0"
+										   Visibility="{Binding Time, Converter={StaticResource NullToVisibilityConverter}}" />
+								<Label Background="{Binding Grade, Converter={StaticResource GradeToBackgroundConverter}}"
+									   Grid.Row="1"
+									   Margin="0,5"
+									   Content="{Binding Grade}"
+									   Style="{StaticResource LargeGradeStyle}"
+									   Visibility="{Binding Grade, Converter={StaticResource NullToVisibilityConverter}}" />
+								<Image Grid.Row="2"
+									   ToolTip="{Binding Grade, Converter={StaticResource GradeToToolTipConverter}}"
+									   Source="{Binding Grade, IsAsync=True, Converter={StaticResource GradeToImageConverter}}" />
+							</Grid>
+						</Expander>
+						<Expander Grid.Row="1"
+								  Header="Details"
+								  Visibility="{Binding  Details, Converter={StaticResource NullToVisibilityConverter}}">
+							<TextBlock Text="{Binding Details}"
+									   Margin="0,5"
+									   Style="{DynamicResource DataStyle}" />
+						</Expander>
+						<Expander Grid.Row="2"
+								  Header="Notes"
+								  Visibility="{Binding  Notes, Converter={StaticResource NullToVisibilityConverter}}">
+							<TextBlock Text="{Binding Notes}"
+									   Margin="0,5"
+									   Style="{DynamicResource DataStyle}" />
+						</Expander>
+						<Expander Grid.Row="3"
+								  Header="Additional Information"
+								  Visibility="{Binding Converter={StaticResource NullToVisibilityConverter}}">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition />
+									<RowDefinition Height="Auto" />
+								</Grid.RowDefinitions>
+								<Image Source="{Binding AssignmentType, IsAsync=True,Converter={StaticResource AssignmentTypeToImageConverter}}"
+									   Margin="10"
+									   ToolTip="{Binding AssignmentType}" />
+								<Label Content="Assistance was needed on this assignment."
+									   Grid.Row="1"
+									   Style="{DynamicResource AssistanceNeededStyle}"
+									   Visibility="{Binding AssistanceNeeded, Converter={StaticResource BooleanToVisibilityConverter}}" />
+							</Grid>
+						</Expander>
+					</Grid>
+				</ScrollViewer>
+
+			</Grid>
+		</Grid>
+	</Grid>
+</Page>

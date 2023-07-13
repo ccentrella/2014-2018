@@ -1,0 +1,62 @@
+﻿<Page x:Class="RecordPro.ClassView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RecordPro"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      Title="ClassView"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <local:UserImageConverter x:Key="UserImageConverter" />
+        <DataTemplate x:Key="studentTemplate">
+            <Grid 
+                  ToolTip="{StaticResource StudentPopup}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image>
+                    <Image.Source>
+                        <PriorityBinding>
+                            <Binding Converter="{StaticResource UserImageConverter}"
+                                     IsAsync="True" />
+                            <Binding Source="Generic Avatar (Unisex).png" />
+                        </PriorityBinding>
+                    </Image.Source>
+                    <Image.CacheMode>
+                        <BitmapCache x:Uid="BitmapCache_1"
+                                     SnapsToDevicePixels="False"
+                                     RenderAtScale="2" />
+                    </Image.CacheMode>
+                    <Image.Clip>
+                        <EllipseGeometry x:Uid="EllipseGeometry_1"
+                                         RadiusX="25"
+                                         Center="25,25"
+                                         RadiusY="25" />
+                    </Image.Clip>
+                </Image>
+                <Label Style="{DynamicResource CrystalHeadings2Dark}"
+                       Content="{Binding UserName}"
+                       Grid.Row="1" />
+                <Label Content="{Binding Age}"
+                       Grid.Row="2" Foreground="{DynamicResource CrystalDarkForeground2}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Style="{DynamicResource CrystalHeadings2Dark}"
+               Content="Class View" />
+        <ListBox Name="studentPane" ItemTemplate="{StaticResource studentTemplate}"
+                 Grid.Row="1"
+                 ItemsPanel="{DynamicResource MultiColumnListBox}">
+        </ListBox>
+    </Grid>
+</Page>

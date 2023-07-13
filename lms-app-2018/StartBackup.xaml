@@ -1,0 +1,41 @@
+﻿<Page x:Class="RecordPro.StartBackup"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:RecordPro"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      Title="Start Backup - Record Pro">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Content="Welcome to backup"
+                   HorizontalAlignment="Center"
+                   Style="{DynamicResource CrystalHeadings2}" />
+            <TextBlock Grid.Row="1"
+                       Foreground="{DynamicResource CrystalForeground2}"
+                       Margin="15"
+                       Text="Using backup allows you to protect your data. If something happens, you have a copy. You can choose a removable disk or even a network drive." />
+            <Image Grid.Row="2"
+                   Source="backup.png" />
+            <StackPanel Grid.Row="3"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                <Button Content="Get _Started"
+                        Style="{DynamicResource CrystalDialogButton}"
+                        IsDefault="True"
+                        Click="Button_Click" />
+                <Button Content="_Cancel"
+                        Style="{DynamicResource CrystalDialogButton}"
+                        IsCancel="True" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

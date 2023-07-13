@@ -1,0 +1,19 @@
+﻿	<Application x:Uid="Application_1" x:Class="RecordPro.Application"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 StartupUri="MainWindow.xaml" Startup="App_Started"
+			 DispatcherUnhandledException="Application_DispatcherUnhandledException"
+			 Exit="Application_Exit">
+	<Application.Resources>
+		<ResourceDictionary x:Uid="ResourceDictionary_1">
+			<ResourceDictionary.MergedDictionaries>
+
+				<!--The default theme that comes installed with Record Pro.-->
+				<ResourceDictionary x:Uid="ResourceDictionary_2" Source="Crystal 2017 Modern.xaml" />
+				
+				<!--The supplement for the default theme.-->
+				<ResourceDictionary x:Uid="ResourceDictionary_3" Source="Crystal 2017 Modern Supplement.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

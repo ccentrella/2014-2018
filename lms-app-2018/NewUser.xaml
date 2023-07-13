@@ -1,0 +1,133 @@
+﻿<Page x:Uid="Page_1" x:Class="RecordPro.NewUser"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:local="clr-namespace:RecordPro"
+	  mc:Ignorable="d"
+	  d:DesignHeight="300"
+	  d:DesignWidth="300"
+	  Title="NewUser"
+	  Loaded="Page_Loaded">
+    <Page.Resources>
+        <local:User x:Uid="local:User_1" x:Key="User" />
+    </Page.Resources>
+    <Page.CommandBindings>
+        <CommandBinding x:Uid="CommandBinding_1" Command="{x:Static local:NewUser.OkayCommand}"
+						CanExecute="CommandBinding_CanExecute"
+						Executed="Okay_Executed" />
+    </Page.CommandBindings>
+    <ScrollViewer x:Uid="ScrollViewer_1" VerticalScrollBarVisibility="Auto">
+        <Grid x:Uid="MainGrid" Name="MainGrid"
+			  Background="{StaticResource CrystalBackgroundFill}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Uid="ColumnDefinition_1" Width="Auto" />
+                <ColumnDefinition x:Uid="ColumnDefinition_2" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Uid="RowDefinition_1" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_2" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_3" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_4" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_5" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_6" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_7" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_8" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_9" Height="Auto" />
+                <RowDefinition x:Uid="RowDefinition_10" />
+            </Grid.RowDefinitions>
+            <Label x:Uid="Label_1" Grid.ColumnSpan="2"
+				   Content="Create Account"
+				   Style="{StaticResource CrystalHeadings2}"
+				   HorizontalAlignment="Center" />
+            <Label x:Uid="Label_2" Content="Name: "
+				   Grid.Row="1" />
+            <TextBox x:Uid="name" Name="name"
+					 Grid.Row="1"
+					 Grid.Column="1">
+                <Binding x:Uid="Binding_1" Source="{StaticResource User}"
+						 Path="Name"
+						 UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:NameValidationRule x:Uid="local:NameValidationRule_1" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <Label x:Uid="Label_3" Content="User Name: "
+				   Grid.Row="2" />
+            <TextBox x:Uid="userName" Name="userName"
+					 Grid.Row="2"
+					 Grid.Column="1">
+                <Binding x:Uid="Binding_2" Source="{StaticResource User}"
+						 Path="UserName"
+						 UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:UserNameValidationRule x:Uid="local:UserNameValidationRule_1" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox>
+            <Label x:Uid="Label_4" Content="Password: "
+				   Grid.Row="3" />
+            <PasswordBox x:Uid="password" Name="password"
+						 PasswordChar="*"
+						 Grid.Row="3"
+						 Grid.Column="1" />
+            <Label x:Uid="Label_5" Content="Confirm Password: "
+				   Grid.Row="4" />
+            <PasswordBox x:Uid="confirmPassword" Name="confirmPassword"
+						 PasswordChar="*"
+						 Grid.Row="4"
+						 Grid.Column="1" />
+            <Label x:Uid="Label_6" Content="Date of Birth"
+				   Grid.Row="5" />
+            <DatePicker x:Uid="birthDate" Name="birthDate"
+						SelectedDate="1/1/2000"
+						Text="{Binding  Source={StaticResource User}, Path=BirthDate, UpdateSourceTrigger=PropertyChanged}"
+						Grid.Row="5"
+						Grid.Column="1" />
+            <Label x:Uid="Label_7" Content="Gender: "
+				   Grid.Row="6" />
+            <ComboBox x:Uid="gender" Name="gender" 
+					  Text="{Binding  Source ={StaticResource User}, Path=Gender, UpdateSourceTrigger=PropertyChanged}"
+					  Grid.Row="6" SelectedIndex="0"
+					  Grid.Column="1">
+                <ComboBoxItem x:Uid="ComboBoxItem_1" Content="Select" />
+                <ComboBoxItem x:Uid="ComboBoxItem_2" Content="Male" />
+                <ComboBoxItem x:Uid="ComboBoxItem_3" Content="Female" />
+
+            </ComboBox>
+            <Label x:Uid="Label_8" Grid.Row="7"
+				   Content="Image: " />
+            <Grid x:Uid="Grid_1" Grid.Row="7"
+				  Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Uid="ColumnDefinition_3" />
+                    <ColumnDefinition x:Uid="ColumnDefinition_4" Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label x:Uid="image" Name="image" />
+                <Button x:Uid="Button_1" Grid.Column="1"
+						Content="Browse"
+						Click="Button_Click_2" />
+            </Grid>
+            <CheckBox x:Uid="termsandConditions" Grid.Row="9"
+					  Name="termsandConditions"
+					  Grid.ColumnSpan="2">
+                <TextBlock x:Uid="TextBlock_1"><Run x:Uid="Run_1">I have read and agree to the</Run> <Hyperlink x:Uid="Hyperlink_1" NavigateUri="Terms.html">Terms and Conditions</Hyperlink></TextBlock>
+            </CheckBox>
+            <StackPanel x:Uid="StackPanel_1" Grid.Row="9"
+						Grid.ColumnSpan="2"
+						VerticalAlignment="Bottom"
+						Orientation="Horizontal"
+						HorizontalAlignment="Right">
+                <Button x:Uid="Button_2" Content="_OK"
+						Command="{x:Static local:NewUser.OkayCommand}"
+						IsDefault="True"
+						Style="{StaticResource CrystalDialogButton}" />
+                <Button x:Uid="Button_3" Content="_Cancel"
+						IsCancel="True"
+						Style="{StaticResource CrystalDialogButton}"
+						Click="Button_Click" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

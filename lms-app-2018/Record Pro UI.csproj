@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD3B916B-31A6-4E16-AC57-45A503388BDD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecordPro</RootNamespace>
+    <AssemblyName>RecordPro</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <ExpressionBlendVersion>12.0.60617.0</ExpressionBlendVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Record Pro 2017 RC</ProductName>
+    <PublisherName>Autosoft Corporation</PublisherName>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.7.0204.00</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetPlatformVersion>8.0</TargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <CodeAnalysisRuleSet>Autosoft RuleSet1.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Record Pro Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RecordPro.Application</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>5F9B61EFD0B20EC03D7A0062ED21F395C9269DFB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RPCert.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Windows 10|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Windows 10\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_UWP</DefineConstants>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Autosoft RuleSet1.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autosoft_Controls_2017">
+      <HintPath>..\Autosoft Controls 2017\bin\Debug\Autosoft_Controls_2017.dll</HintPath>
+      <Private>True</Private>
+      <Aliases>global</Aliases>
+    </Reference>
+    <Reference Include="Microsoft.Toolkit.Uwp.Notifications, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Toolkit.Uwp.Notifications.2.0.0\lib\dotnet\Microsoft.Toolkit.Uwp.Notifications.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="QueryString.NETCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QueryString.NET.1.0.0\lib\dotnet\QueryString.NETCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Reactive.Core, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.Core.3.1.1\lib\net46\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.Interfaces.3.1.1\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.Linq.3.1.1\lib\net46\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.PlatformServices.3.1.1\lib\net46\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.Windows.Threading.3.1.1\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices.WindowsRuntime" />
+    <Reference Include="System.Runtime.WindowsRuntime, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.WindowsRuntime.UI.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Runtime.WindowsRuntime.UI.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Windows">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\UnionMetadata\Facade\Windows.WinMD</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Windows.Foundation.FoundationContract">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.FoundationContract\3.0.0.0\Windows.Foundation.FoundationContract.winmd</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Windows.Foundation.UniversalApiContract">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.15063.0\Windows.Foundation.UniversalApiContract\4.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddAssignmentEnabledConverter.cs" />
+    <Compile Include="Advertisements\Ad.xaml.cs">
+      <DependentUpon>Ad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentsDialog.xaml.cs">
+      <DependentUpon>AddStudentsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assignment.cs" />
+    <Compile Include="AssignmentComparer.cs" />
+    <Compile Include="Assignments.xaml.cs">
+      <DependentUpon>Assignments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentTypeToImageConverter.cs" />
+    <Compile Include="BackupComboBoxToLocationVisibilityConverter.cs" />
+    <Compile Include="BackupComboBoxToTimeVisibilityConverter.cs" />
+    <Compile Include="BackupDialog.xaml.cs">
+      <DependentUpon>BackupDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BooleanToGridLengthConverter.cs" />
+    <Compile Include="Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Advertisements\CalendarAd.xaml.cs">
+      <DependentUpon>CalendarAd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class.cs" />
+    <Compile Include="ClassView.xaml.cs">
+      <DependentUpon>ClassView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigureBackup.xaml.cs">
+      <DependentUpon>ConfigureBackup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigureBackup2.xaml.cs">
+      <DependentUpon>ConfigureBackup2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CoursesConverter.cs" />
+    <Compile Include="DateTimeCollectionToStringConverter.cs" />
+    <Compile Include="Commands.cs" />
+    <Compile Include="Compatibility.cs" />
+    <Compile Include="ContactInfo.cs" />
+    <Compile Include="DateToDatePickerConverter.cs" />
+    <Compile Include="DateToImageConverter.cs" />
+    <Compile Include="DateToStringConverter.cs" />
+    <Compile Include="GradeConverter.cs" />
+    <Compile Include="HomeAd.xaml.cs">
+      <DependentUpon>HomeAd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HomePane.xaml.cs">
+      <DependentUpon>HomePane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageFunctions.cs" />
+    <Compile Include="InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InternalTypes.cs" />
+    <Compile Include="IOFunctions.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManageGrades.xaml.cs">
+      <DependentUpon>ManageGrades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStudents.xaml.cs">
+      <DependentUpon>ManageStudents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddAssignment.xaml.cs">
+      <DependentUpon>AddAssignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NameToStringConverter.cs" />
+    <Compile Include="NameValidationRule.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="NewUser.xaml.cs">
+      <DependentUpon>NewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs" />
+    <Compile Include="NullToVisibilityConverter.cs" />
+    <Compile Include="OverlayConverter.cs" />
+    <Compile Include="PhoneConverter.cs" />
+    <Compile Include="ProductRegistration.xaml.cs">
+      <DependentUpon>ProductRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuickFactsToVisibilityConverter.cs" />
+    <Compile Include="RecentStringFunctions.cs" />
+    <Compile Include="ReportCard.cs" />
+    <Compile Include="RPApp.cs" />
+    <Compile Include="RPGrade.cs" />
+    <Compile Include="School.cs" />
+    <Compile Include="SignIn1.xaml.cs">
+      <DependentUpon>SignIn1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn2.xaml.cs">
+      <DependentUpon>SignIn2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartBackup.xaml.cs">
+      <DependentUpon>StartBackup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StringFunctions.cs" />
+    <Compile Include="TaskDialog.cs" />
+    <Compile Include="TextToVisibilityConverter.cs" />
+    <Compile Include="ThemeConverter.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserImageConverter.cs" />
+    <Compile Include="UserNameValidationRule.cs" />
+    <Compile Include="TimeToStringConverter.cs" />
+    <Compile Include="UserStatus.cs" />
+    <Compile Include="UserStatusConverter.cs" />
+    <Compile Include="UserToolTipConverter.cs" />
+    <Compile Include="Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advertisements\Ad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddStudentsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Assignments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BackupDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Calendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Advertisements\CalendarAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfigureBackup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfigureBackup2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Crystal 2017 Modern Supplement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Crystal 2017 Modern.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HomeAd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManageGrades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManageStudents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddAssignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignIn1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignIn2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartBackup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <None Include="packages.config" />
+    <Resource Include="Generic Avatar %28Female%29.png" />
+    <Resource Include="Generic Avatar %28Male%29.png" />
+    <Resource Include="Generic Avatar %28Unisex%29.png" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="CustomDictionary.xml" />
+    <Resource Include="Search.png" />
+    <Resource Include="Holiday.png" />
+    <Resource Include="School Day.png" />
+    <Resource Include="Vacation.png" />
+    <Resource Include="Weekend.png" />
+    <Resource Include="Quiz.png" />
+    <Resource Include="Test.png" />
+    <Resource Include="Excellent Grade.png" />
+    <Resource Include="Failing Grade.png" />
+    <Resource Include="Poor Grade.png" />
+    <SplashScreen Include="Record Pro Logo Large.png" />
+    <Resource Include="Record Pro Logo.ico" />
+    <Resource Include="Paper.png" />
+    <Resource Include="DSCN1094.JPG" />
+    <Resource Include="Backup.png" />
+    <Content Include="Record Pro Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Application.png" />
+    <Resource Include="Homework.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
