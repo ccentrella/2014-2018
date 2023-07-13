@@ -1,0 +1,175 @@
+﻿<Window x:Class="Image_Creator.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="clr-namespace:Image_Creator"
+		xmlns:AControls="clr-namespace:Autosoft_Controls_2017;assembly=Autosoft_Controls_2017"
+		Title="Image Creator"
+		Icon="Image Creator Logo.jpg"
+		Height="339"
+		Width="598"
+		Closing="Window_Closing"
+		Loaded="Window_Loaded">
+	<Window.InputBindings>
+		<KeyBinding Command="IncreaseZoom"
+					Key="OemPlus"
+					Modifiers="Control" />
+		<KeyBinding Command="DecreaseZoom"
+					Key="OemMinus"
+					Modifiers="Control" />
+		<KeyBinding Command="{x:Static local:MainWindow.ResetZoom}"
+					Key="D0"
+					Modifiers="Control" />
+	</Window.InputBindings>
+	<Window.CommandBindings>
+		<CommandBinding Command="Save"
+						Executed="Save_Executed"
+						CanExecute="Save_CanExecute" />
+		<CommandBinding Command="Open"
+						Executed="Open_Executed"
+						CanExecute="Open_CanExecute" />
+		<CommandBinding Command="SaveAs"
+						Executed="SaveAs_Executed"
+						CanExecute="SaveAs_CanExecute" />
+		<CommandBinding Command="{x:Static local:MainWindow.SaveImageAs}"
+						Executed="SaveImageAs_Executed"
+						CanExecute="SaveImageAs_CanExecute" />
+		<CommandBinding CanExecute="ResetZoom_CanExecute"
+						Executed="ResetZoom_Executed"
+						Command="{x:Static local:MainWindow.ResetZoom}" />
+		<CommandBinding CanExecute="IncreaseZoom_CanExecute"
+						Executed="IncreaseZoom_Executed"
+						Command="IncreaseZoom" />
+		<CommandBinding CanExecute="DecreaseZoom_CanExecute"
+						Executed="DecreaseZoom_Executed"
+						Command="DecreaseZoom" />
+		<CommandBinding Command="New"
+						CanExecute="New_CanExecute"
+						Executed="New_Executed" />
+		<CommandBinding Command="Delete"
+						CanExecute="Delete_CanExecute"
+						Executed="Delete_Executed" />
+		<CommandBinding Command="{x:Static local:MainWindow.ChangeBorderThickness}"
+						Executed="ChangeBorderThickness_Executed"
+						CanExecute="ChangeBorderThickness_CanExecute" />
+	</Window.CommandBindings>
+	<Grid Name="mainGrid">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<Menu>
+			<MenuItem Header="_File">
+				<MenuItem Command="Open" />
+				<MenuItem Command="New" />
+				<MenuItem Header="_Save"
+						  Command="Save" />
+				<MenuItem  Command="SaveAs" />
+				<MenuItem Command="{x:Static local:MainWindow.SaveImageAs}" />
+				<Separator />
+				<MenuItem Header="E_xit"
+						  Click="ExitButton_Click" />
+			</MenuItem>
+			<MenuItem Header="_Edit">
+				<MenuItem Command="Undo"
+						  CommandTarget="{Binding ElementName=data}" />
+				<MenuItem Command="Redo"
+						  CommandTarget="{Binding ElementName=data}" />
+				<Separator />
+				<MenuItem Command="Copy"
+						  CommandTarget="{Binding ElementName=data}" />
+				<MenuItem Command="Cut"
+						  CommandTarget="{Binding ElementName=data}" />
+				<MenuItem Command="Paste"
+						  CommandTarget="{Binding ElementName=data}" />
+				<MenuItem Command="Delete"
+						  CommandTarget="{Binding ElementName=data}" />
+			</MenuItem>
+			<MenuItem Header="_View">
+				<MenuItem Command="IncreaseZoom"
+						  InputGestureText="Ctrl++" />
+				<MenuItem Command="DecreaseZoom"
+						  InputGestureText="Ctrl--" />
+				<MenuItem Command="{x:Static local:MainWindow.ResetZoom}"
+						  InputGestureText="Ctrl+0" />
+			</MenuItem>
+			<MenuItem Name="format"
+					  Header="_Format">
+				<MenuItem Command="{x:Static local:MainWindow.ChangeBorderColor}" />
+				<MenuItem Command="{x:Static local:MainWindow.ChangeFillColor}" />
+				<MenuItem 						  Command="{x:Static local:MainWindow.ChangeBorderThickness}" />
+			</MenuItem>
+		</Menu>
+		<Popup Name="thicknessPopup"
+			   PlacementTarget="{Binding ElementName=format}"
+			   StaysOpen="False">
+			<Grid Background="{StaticResource PopupBackground}"
+				  Height="100">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Label Style="{StaticResource Heading1}"
+					   Padding="25,7"
+					   Content="Stroke Thickness" />
+				<AControls:NumericUpDown Name="thickness"
+										 Height="35"
+										 Grid.Row="1"
+										 IncrementAmount="0.5"
+										 NumberOfDecimalPlaces="2"
+										 Value="10" />
+			</Grid>
+		</Popup>
+		<Popup Name="colorPopup"
+			   PlacementTarget="{Binding ElementName=format}"
+			   StaysOpen="False">
+			<Grid Background="{StaticResource PopupBackground}">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Label Style="{StaticResource Heading1}"
+					   Padding="25,7"
+					   Content="Brushes" />
+				<TabControl Grid.Row="1"
+							TabStripPlacement="Top">
+					<TabItem Header="Stroke"
+							 Style="{StaticResource Tab17}">
+						<WrapPanel ItemWidth="30"
+								   ItemHeight="30">
+							<ToggleButton Background="Red" />
+						</WrapPanel>
+					</TabItem>
+					<TabItem Header="Fill"
+							 Style="{StaticResource Tab17}">
+					</TabItem>
+				</TabControl>
+			</Grid>
+		</Popup>
+		<TextBox Name="data"
+				 Background="White"
+				 BorderBrush="Gray"
+				 Grid.Row="1"
+				 MaxLines="1" />
+		<ScrollViewer HorizontalScrollBarVisibility="Auto"
+					  VerticalScrollBarVisibility="Auto"
+					  Grid.Row="2">
+			<Viewbox Name="viewBox"
+					 Width="Auto"
+					 Height="Auto"
+					 Margin="25">
+				<Path Name="path"
+					  Data="{Binding ElementName=data,Path=Text}"
+					  Stroke="Black"
+					  StrokeThickness="{Binding Value,ElementName=thickness}" />
+			</Viewbox>
+		</ScrollViewer>
+
+		<Label Content="© 2017 Autosoft Corporation. All rights reserved."
+			   Grid.Row="3"
+			   HorizontalContentAlignment="Center"
+			   Background="Silver" />
+	</Grid>
+</Window>

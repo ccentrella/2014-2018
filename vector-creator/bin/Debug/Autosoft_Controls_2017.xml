@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Autosoft_Controls_2017</name>
+    </assembly>
+    <members>
+        <member name="T:Autosoft_Controls_2017.Pane">
+            <summary>
+             Represents window-like panes that can be moved and resized, and that are contained in a PanePanel.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.Pane.HeaderProperty">
+            <summary>
+            The Header dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.Pane.ContentProperty">
+            <summary>
+            The Content dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.Pane.PinButtonContentProperty">
+            <summary>
+            The PinButton dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.Pane.UnpinButtonContentProperty">
+            <summary>
+            The UnpinButton dependency property.
+            </summary>
+            
+        </member>
+        <member name="F:Autosoft_Controls_2017.Pane.CloseButtonContentProperty">
+            <summary>
+            The CloseButton dependency property.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Pane.Header">
+            <summary>
+            Represents the header of the control, which usually consists of text.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Pane.Content">
+            <summary>
+            Represents the main body of the control.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Pane.PinButtonContent">
+            <summary>
+            Represents the content for the pin button.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Pane.UnpinButtonContent">
+            <summary>
+            Represents the content for the unpin button.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Pane.CloseButtonContent">
+            <summary>
+            Represents the content for the close button.
+            </summary>
+        </member>
+        <member name="T:Autosoft_Controls_2017.ColorDialog">
+            <summary>
+            Defines a basic color palette
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.ColorDialog.SelectedColorProperty">
+            <summary>
+            The selected color dependency property
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.ColorDialog.OnColorChanged(Autosoft_Controls_2017.ColorDialog.SelectedColorChangedEventArgs)">
+            <summary>
+            Occurs when the selected color is changed.
+            </summary>
+            <param name="e">The arguments passed to the ValueChanged Handler.</param>
+        </member>
+        <member name="P:Autosoft_Controls_2017.ColorDialog.SelectedColor">
+            <summary>
+            Gets or sets the selected color
+            </summary>
+        </member>
+        <member name="E:Autosoft_Controls_2017.ColorDialog.SelectedColorChanged">
+            <summary>
+            The ValueChanged event is raised before the selected color changes.
+            </summary>
+        </member>
+        <member name="T:Autosoft_Controls_2017.ColorDialog.SelectedColorChangedEventArgs">
+            <summary>
+            This represents the arguments to be used when the selected color changes.
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.ColorDialog.SelectedColorChangedEventArgs.#ctor(System.Double,System.Double)">
+            <summary>
+            The ValueChangedEventArgs Constructor
+            </summary>
+            <param name="passedOldValue">The old value of the range</param>
+            <param name="passedNewValue">The new value of the range</param>
+        </member>
+        <member name="P:Autosoft_Controls_2017.ColorDialog.SelectedColorChangedEventArgs.OldValue">
+            <summary>
+            This represents the old value.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.ColorDialog.SelectedColorChangedEventArgs.NewValue">
+            <summary>
+            This represents the new value.
+            </summary> 
+        </member>
+        <member name="P:Autosoft_Controls_2017.ColorDialog.SelectedColorChangedEventArgs.Canceled">
+            <summary>
+            This represents whether to change the value, or not.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.SearchBox.ButtonContentProperty">
+            <summary>
+            The content dependency property.
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.SearchBox.OnButtonClicked(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            The event that is raised when the search/cancel button is clicked.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Autosoft_Controls_2017.SearchBox.ButtonContent">
+            <summary>
+            The content of the button.
+            </summary>
+        </member>
+        <member name="T:Autosoft_Controls_2017.TimeControl">
+            <summary>
+            Represents a control that allows the user to select hours, minutes, and seconds
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.TimeControl.OnApplyTemplate">
+            <summary>
+            Occurs when the template is applied
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.TimeControl.TimeProperty">
+            <summary>
+            The Time dependency property
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.TimeControl.Time">
+            <summary>
+            Represents the combined time
+            </summary>
+        </member>
+        <member name="T:Autosoft_Controls_2017.NumericUpDown">
+            <summary>
+            Represents a control with a textbox, an increment button, and a decrement button.
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.NumericUpDown.OnApplyTemplate">
+            <summary>
+            Occurs when the template is applied
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.MinValueProperty">
+            <summary>
+            The MinValue dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.MaxValueProperty">
+            <summary>
+            The MaxValue dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.ValueProperty">
+            <summary>
+            The Value dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.IncrementAmountProperty">
+            <summary>
+            The IncrementAmount dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.DecrementAmountProperty">
+            <summary>
+            The DependencyAmount dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.IsDecrementEqualProperty">
+            <summary>
+            The IsDecrementEqual dependency property.
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.NumberOfDecimalPlacesProperty">
+            <summary>
+            The NumberOfDecimalPlaces dependency property.
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.NumericUpDown.CheckButtons">
+            <summary>
+            Check whether the increment or decrement buttons should be enabled
+            </summary>
+        </member>
+        <member name="F:Autosoft_Controls_2017.NumericUpDown.ValueChangedEvent">
+            <summary>
+            Occurs when the  value of the range changes
+            </summary>
+        </member>
+        <member name="M:Autosoft_Controls_2017.NumericUpDown.OnValueChanged(System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when the value of the range is changed.
+            </summary>
+            <param name="e">The arguments passed to the ValueChanged Handler.</param>
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.MinValue">
+            <summary>
+            The minimum value for the range.
+            </summary>
+            
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.MaxValue">
+            <summary>
+            The maximum value for the range.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.Value">
+            <summary>
+            The current value for the range.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.IncrementAmount">
+            <summary>
+            The amount to increment the value every time the up button is clicked.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.DecrementAmount">
+            <summary>
+            The amount to decrement the value every time the down button is clicked.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.IsDecrementEqual">
+            <summary>
+            Represents whether or not the down button decrement value is the same as the up button increment value.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.NumericUpDown.NumberOfDecimalPlaces">
+            <summary>
+            Represents the number of decimal places to automatically round the value.
+            </summary>
+        </member>
+        <member name="E:Autosoft_Controls_2017.NumericUpDown.ValueChanged">
+            <summary>
+            Occurs when the  value of the range changes
+            </summary>
+        </member>
+        <member name="T:Autosoft_Controls_2017.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Autosoft_Controls_2017.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
