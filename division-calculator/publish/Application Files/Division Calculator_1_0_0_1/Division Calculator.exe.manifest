@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Division Calculator.exe" version="1.0.0.1" publicKeyToken="7ca3958bcf80305c" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Division Calculator.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Division Calculator" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Division Calculator.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Division Calculator.exe" size="30112">
+      <assemblyIdentity name="Division Calculator" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>97sG1Cv+wHyTvM/THOzIP0V9dfM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Division Calculator.ico" size="7358">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HMp4zoeuc3hl7rn7SZRBSkEf7v4=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Thomas-PC\Thomas" issuerKeyHash="1f3778077c7c83157a7c0c358c992aec6dc92f35" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>miMuFOWxPPgvjgjWB851+od1hW8=</DigestValue></Reference></SignedInfo><SignatureValue>h9zaVODMQWXSN7G1y6JKdnSiSbyhuZM1o0NZ/u1llCH+6ZCLBeoYL6P+uRfNCEbGqJDCF2oWuvMshe1IT9C/wpZkhxcJ2tgo6ABt887lmL8/6nLbJXtddh3MOudrWyqFzV5wF/0/4bj0mtjWVZRSuzuNg0ga4ggbY5rSPcOhhjA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>knbSv5wAl2gOvYXWI1gMpgBtsNNLVC6u6ZTbn7gUAP486ONHI3B7Mg5+POAFkxTEZnji5er1h5g+IL/FOsUsC7d0sVS3wC3kNp8WV/IhY50gyon7DiTNvqlTIoMcZ+k9k15O6ujowWwDVNC1OG6Lzbcl33msqOhnGSIHHKCmRrM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6f857587fa75ce07d6088e2ff83cb1e5142e239a" Description="" Url=""><as:assemblyIdentity name="Division Calculator.exe" version="1.0.0.1" publicKeyToken="7ca3958bcf80305c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Thomas-PC\Thomas</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>VqAdNdbbG8QUub6UroVnIUbMVMI=</DigestValue></Reference></SignedInfo><SignatureValue>RdJzeNY6S4mddlKsQhn91/PnEVuQ5GxjQydGkJ7v07GoH09oOeeqB0UFu1/8cYDKdsJbSXfT9w8mQHdbqFsyWOSIfxDyGHcKsM8RZXCffcvFZ/fGcljT7mVLRpCccTq3fUaWJD4+Jj//ncgf7/U82epms1P+vFXCngNM+Ye7Qag=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>knbSv5wAl2gOvYXWI1gMpgBtsNNLVC6u6ZTbn7gUAP486ONHI3B7Mg5+POAFkxTEZnji5er1h5g+IL/FOsUsC7d0sVS3wC3kNp8WV/IhY50gyon7DiTNvqlTIoMcZ+k9k15O6ujowWwDVNC1OG6Lzbcl33msqOhnGSIHHKCmRrM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQHc7SLFK9m5BO/IHi4r5eWjANBgkqhkiG9w0BAQUFADArMSkwJwYDVQQDHiAAVABoAG8AbQBhAHMALQBQAEMAXABUAGgAbwBtAGEAczAeFw0xNTEwMTUwMDIzNTZaFw0xNjEwMTQwNjIzNTZaMCsxKTAnBgNVBAMeIABUAGgAbwBtAGEAcwAtAFAAQwBcAFQAaABvAG0AYQBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCSdtK/nACXaA69hdYjWAymAG2w00tULq7plNufuBQA/jzo40cjcHsyDn484AWTFMRmeOLl6vWHmD4gv8U6xSwLt3SxVLfALeQ2nxZX8iFjnSDKifsOJM2+qVMigxxn6T2TXk7q6OjBbANU0LU4bovNtyXfeayo6GcZIgccoKZGswIDAQABMA0GCSqGSIb3DQEBBQUAA4GBABB2M+J7adP+tJsfHtAS5/eKnYQlEUoxczLXz9uF2OSAYF4dP8sZpqorchQgf2bcTRofcG72A17uDSDYtpIP4S/JPyCi0DW3TtKbdticSNnOmMkFr+bi2Z8YoxinB9rcGyHpYhJQvMwvzGiJiNJXfLErjuOd2Bb5ULWEUPJ3uoH6</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,0 +1,16 @@
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.csprojResolveAssemblyReference.cache
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\MainWindow.baml
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\MainWindow.g.cs
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\App.g.cs
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator_MarkupCompile.cache
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.g.resources
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.csproj.GenerateResource.Cache
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\bin\Debug\Division Calculator.exe
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\bin\Debug\Division Calculator.pdb
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.exe
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.pdb
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\DivisionCalculator.Properties.Resources.resources
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\bin\Debug\Division Calculator.exe.manifest
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\bin\Debug\Division Calculator.application
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.exe.manifest
+c:\users\thomas\documents\visual studio 2013\Projects\Division Calculator\obj\Debug\Division Calculator.application
